@@ -5,11 +5,7 @@ import {KeyProperty} from './interfaces/key-property';
 
 @Component({template: ''})
 export abstract class AbstractKeyComponent {
-
-  constructor(private sanitizer: DomSanitizer) {}
-
   abstract get keyConfig(): KeyConfig;
-  abstract get keyProperties(): KeyProperty;
 
   @HostListener('click', ['$event'])
   bindKey(): void {

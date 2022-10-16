@@ -5,7 +5,6 @@ import {CodeEnum} from '../enums/code.enum';
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BoardComponent {
   code: typeof CodeEnum = CodeEnum;

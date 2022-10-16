@@ -13,12 +13,12 @@ export const KeysConfig: { [key in keyof typeof CodeEnum]: KeyConfig } = {
     code: 'Backquote',
   },
   Backspace: {
-    key: 'Back',
+    key: '&#9003;',
     keyCode: 8,
     code: 'Backspace',
   },
   Tab: {
-    key: 'Tab',
+    key: '&#8633;',
     keyCode: 9,
     code: 'Tab',
   },
@@ -53,7 +53,7 @@ export const KeysConfig: { [key in keyof typeof CodeEnum]: KeyConfig } = {
     code: 'CapsLock',
   },
   Escape: {
-    key: 'Esc',
+    key: 'esc',
     keyCode: 27,
     code: 'Escape',
   },

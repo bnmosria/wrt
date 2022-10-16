@@ -1,4 +1,48 @@
 $key-radius: 5px;
+$key-idle-top: 3px;
+$key-idle-bottom: 14px;
+$key-idle-right: 12px;
+$key-idle-left: 4px;
+
+$key-active-diff: 3;
+
+@mixin key-up-effect {
+  padding: 0 10px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: $key-idle-top;
+    left: $key-idle-left;
+    bottom: $key-idle-bottom;
+    right: $key-idle-right;
+    background: linear-gradient(90deg, #232323, #4a4a4a);
+    border-radius: $key-radius;
+    box-shadow: -10px -10px 10px rgba(255, 255, 255, .25),
+    10px 5px 10px rgba(0, 0, 0, .15);
+    border-left: 1px solid #0004;
+    border-bottom: 1px solid #0004;
+    border-top: 1px solid #0009;
+  }
+}
+
+@mixin key-down-effect {
+  padding: (0px + $key-active-diff) (12px + $key-active-diff);
+
+  &::before {
+    top: $key-idle-top + $key-active-diff;
+    left: $key-idle-left + $key-active-diff;
+    bottom: $key-idle-bottom - $key-active-diff;
+    right: $key-idle-right - $key-active-diff;
+    background: linear-gradient(90deg, #232323, #4a4a4a);
+    border-radius: $key-radius;
+    box-shadow: (-8px + $key-active-diff) (-8px + $key-active-diff) (12px + $key-active-diff) rgba(255, 255, 255, .25),
+      (12px + $key-active-diff) (7px + $key-active-diff) (12px + $key-active-diff) rgba(0, 0, 0, .15);
+    border-left: 1px solid #0004;
+    border-bottom: 1px solid #0004;
+    border-top: 1px solid #0009;
+  }
+}
 
 :host {
   --keyColor: #00ff00;
@@ -11,10 +55,13 @@ $key-radius: 5px;
   font-size: 10px;
   color: var(--keyColor);
   box-shadow: 0 0 30px 5px var(--keyColor);
-  text-shadow: 0 0.5px 1px var(--keyColor);
   user-select: none;
   cursor: pointer;
   text-transform: capitalize;
+
+  &.key-down > div {
+    @include key-down-effect;
+  }
 }
 
 div {
@@ -24,27 +71,12 @@ div {
   width: 100%;
   height: 100%;
   border-radius: $key-radius;
-  background: linear-gradient(180deg,#282828,#202020);
-  padding: 0 10px;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 4px;
-    bottom: 14px;
-    right: 12px;
-    background: linear-gradient(90deg,#232323,#4a4a4a);
-    border-radius: $key-radius;
-    box-shadow:
-      -10px -10px 10px rgba(255,255,255,.25),
-      10px 5px 10px rgba(0,0,0,.15);
-    border-left: 1px solid #0004;
-    border-bottom: 1px solid #0004;
-    border-top: 1px solid #0009;
-  }
+  background: linear-gradient(180deg, #282828, #202020);
 
   & span {
     position: relative;
   }
+
+  @include key-up-effect;
 }
+
