@@ -8,26 +8,19 @@ $key-size: 64px;
 $key-gutter: 4px;
 $key-spacing-horizontal: 9px;
 $key-spacing-vertical: 5px;
-$keyboard-spacing: 16px;
 
 .keyboard {
   display: grid;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  font-weight: 300;
   grid-template-columns: repeat(58, ($key-size + $key-gutter) / 4);
   grid-template-rows: repeat(12, ($key-size + $key-gutter) / 2);
   justify-content: center;
   letter-spacing: 1px;
   line-height: 24px;
-  padding: $keyboard-spacing;
 }
 
 .key {
   align-items: center;
   background-color: $color-key;
-  border-radius: $key-radius;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   grid-column-end: span 4;
@@ -42,12 +35,10 @@ $keyboard-spacing: 16px;
     grid-row-end: span 1;
   }
   &.is-arrow-down {
-    border-radius: 0 0 $key-radius $key-radius;
     grid-row-start: 10;
     margin-top: $key-gutter / 4;
   }
   &.is-arrow-up {
-    border-radius: $key-radius $key-radius 0 0;
     grid-row-start: 9;
     margin-bottom: $key-gutter / 4;
   }
@@ -92,7 +83,6 @@ $keyboard-spacing: 16px;
   }
   &.is-left,
   &.is-right{
-    font-size: 12px;
     justify-content: space-between;
     line-height: 20px;
   }
