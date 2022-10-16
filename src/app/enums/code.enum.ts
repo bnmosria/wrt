@@ -1,6 +1,7 @@
 export enum CodeEnum {
   Empty = 'Empty',
   Backquote = 'Backquote',
+  IntlBackslash = 'IntlBackslash',
   Backspace = 'Backspace',
   Tab = 'Tab',
   Enter = 'Enter',

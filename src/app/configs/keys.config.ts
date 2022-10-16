@@ -7,6 +7,11 @@ export const KeysConfig: { [key in keyof typeof CodeEnum]: KeyConfig } = {
     keyCode: 0,
     code: 'Unidentified',
   },
+  IntlBackslash: {
+    key: '<',
+    keyCode: 188,
+    code: 'IntlBackslash',
+  },
   Backquote: {
     key: '^',
     keyCode: 192,
