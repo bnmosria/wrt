@@ -28,17 +28,27 @@ export const KeysConfig: { [key in keyof typeof CodeEnum]: KeyConfig } = {
     code: 'Enter',
   },
   ShiftLeft: {
-    key: 'Shift',
+    key: '&#8679;',
     keyCode: 16,
     code: 'ShiftLeft',
+  },
+  ShiftRight: {
+    key: '&#8679;',
+    keyCode: 16,
+    code: 'ShiftRight',
   },
   ControlLeft: {
     key: 'Ctrl',
     keyCode: 17,
     code: 'ControlLeft',
   },
+  ControlRight: {
+    key: 'ctrl',
+    keyCode: 17,
+    code: 'ControlRight',
+  },
   CapsLock: {
-    key: 'Lock',
+    key: '&#8682;',
     keyCode: 20,
     code: 'CapsLock',
   },
@@ -126,6 +136,11 @@ export const KeysConfig: { [key in keyof typeof CodeEnum]: KeyConfig } = {
     key: 'Alt',
     keyCode: 18,
     code: 'AltLeft',
+  },
+  AltRight: {
+    key: 'Alt Gr',
+    keyCode: 18,
+    code: 'AltRight',
   },
   F1: {
     key: 'F1',
