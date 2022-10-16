@@ -1,5 +1,5 @@
 export interface KeyProperty {
-  color: string;
-  width: string;
-  height: string;
+    color: string;
+    width: string;
+    height: string;
 }
