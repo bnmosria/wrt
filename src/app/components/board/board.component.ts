@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { CodeEnum } from '../../enums/code.enum';
+import { keyboardLayoutConfig } from '../../configs/keyboard-layout.config';
 
 @Component({
     selector: 'app-board',
@@ -8,5 +9,6 @@ import { CodeEnum } from '../../enums/code.enum';
     styleUrls: ['./board.component.scss']
 })
 export class BoardComponent {
-    code: typeof CodeEnum = CodeEnum;
+    public code: typeof CodeEnum = CodeEnum;
+    public layoutConfig: { key: CodeEnum, classType?: string }[] = keyboardLayoutConfig;
 }
